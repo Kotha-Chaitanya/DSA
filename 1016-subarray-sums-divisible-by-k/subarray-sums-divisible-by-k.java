@@ -8,10 +8,10 @@ class Solution {
         {
             s=s+nums[i];
             int r=s%k;
-            if(r<0)
-            {
+             if(r<0)
+             {
                 r=r+k;
-            }
+             }
             if(map.containsKey(r))
             {
                 c=c+map.get(r);
