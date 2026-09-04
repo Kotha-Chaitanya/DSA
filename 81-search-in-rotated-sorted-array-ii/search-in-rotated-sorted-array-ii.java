@@ -6,7 +6,9 @@ class Solution {
         {
             int mid=(low+high)/2;
             if(nums[mid]==target)
-            return true;
+            {
+                return true;
+            }
             if(nums[low]==nums[mid] && nums[mid]==nums[high])
             {
                 low=low+1;
@@ -15,12 +17,14 @@ class Solution {
             }
             if(nums[low]<=nums[mid])
             {
-                if(nums[low]<=target && target <=nums[mid])
+                if(nums[low]<=target && target<=nums[mid])
                 {
                     high=mid-1;
                 }
                 else
-                low=mid+1;
+                {
+                    low=mid+1;
+                }
             }
             else
             {
@@ -29,9 +33,10 @@ class Solution {
                     low=mid+1;
                 }
                 else
-                high=mid-1;
+                {
+                    high=mid-1;
+                }
             }
-
         }
         return false;
     }
