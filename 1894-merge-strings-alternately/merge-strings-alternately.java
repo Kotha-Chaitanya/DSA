@@ -21,6 +21,6 @@ class Solution {
             j++;
         }
         
-        return result.toString();
+        return new String(result);
     }
 }
