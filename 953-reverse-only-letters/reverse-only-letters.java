@@ -5,11 +5,11 @@ class Solution {
         int j=arr.length-1;
         while(i<j)
         {
-            if(!(Character.isLetter(arr[i])))
+            if(!(Character.isAlphabetic(arr[i])))
             {
                 i++;
             }
-            else if(!(Character.isLetter(arr[j])))
+            else if(!(Character.isAlphabetic(arr[j])))
             {
                 j--;
             }
