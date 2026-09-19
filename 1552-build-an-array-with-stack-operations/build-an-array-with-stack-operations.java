@@ -1,25 +1,27 @@
 class Solution {
     public List<String> buildArray(int[] t, int n) {
         ArrayList<String >list=new ArrayList<>();
-        int arr[]=new int[n];
-        for(int i=1;i<=arr.length;i++)
-        {
-            for(int j=0;j<t.length;j++)
+        int j=0;
+            for(int i=1;i<=n;i++)
             {
                 if(i==t[j])
                 {
                     list.add("Push");
-                    break;
+                    j++;
                 }
-                else if(i<t[j])
+                else 
                 {
                     list.add("Push");
                     list.add("Pop");
+                   
+                }
+                if(j==t.length)
+                {
                     break;
                 }
                 
             }
-        }
+        
         return list;
 
     }
