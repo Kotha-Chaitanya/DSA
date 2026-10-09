@@ -15,7 +15,11 @@ class Solution {
             int s=(nums[i]+nums[left]+nums[j]);
             if(s==0)
             {
-                list.add(Arrays.asList(nums[i],nums[left],nums[j]));
+                List<Integer> list1=new ArrayList<>();
+                list1.add(nums[i]);
+                list1.add(nums[left]);
+                list1.add(nums[j]);
+                list.add(list1);
                 left++;
                 j--;
             
