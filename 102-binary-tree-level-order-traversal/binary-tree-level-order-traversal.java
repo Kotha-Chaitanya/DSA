@@ -25,7 +25,7 @@ class Solution {
             ArrayList<Integer> al=new ArrayList<>();
             for(int i=0;i<size;i++)
             {
-                TreeNode curr =q.peek();
+                TreeNode curr=q.peek();
                 if(curr.left!=null)
                 q.offer(curr.left);
                 if(curr.right!=null)
@@ -33,7 +33,7 @@ class Solution {
                 al.add(curr.val);
                 q.remove();
 
-            }
+            }   
             ans.add(al);
         }
         return ans;
