@@ -19,7 +19,6 @@ class Solution {
         if(root==null)
         {
             return ans;
-
         }
         Queue<TreeNode> q=new LinkedList<>();
         q.add(root);
