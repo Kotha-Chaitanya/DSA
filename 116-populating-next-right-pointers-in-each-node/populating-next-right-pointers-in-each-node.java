@@ -33,8 +33,7 @@ class Solution {
                 Node cur= q.remove();
                 if(cur.left!=null) q.add(cur.left);
                 if(cur.right!=null) q.add(cur.right);
-                al.add(cur);
-               
+                al.add(cur);     
             }
             for(int i=0;i<al.size()-1;i++){
                 al.get(i).next=al.get(i+1);
