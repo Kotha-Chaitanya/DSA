@@ -15,30 +15,55 @@
  */
 class Solution {
     public boolean isEvenOddTree(TreeNode root) {
-        if (root == null) return true;    
+
         Queue<TreeNode> q = new LinkedList<>();
-        q.add(root);
-        int level = 0;  
+        q.offer(root);
+
+        int level = 0;
+
         while (!q.isEmpty()) {
+
             int size = q.size();
-            Integer prevVal = null;     
-            for (int i = 0; i < size; i++) {
-                TreeNode node = q.poll();               
-                if (level % 2 == 0) {
-                    if (node.val % 2 == 0) return false;
-                    if (prevVal != null && node.val <= prevVal) return false;
-                } else {
-                    if (node.val % 2 != 0) return false;
-                    if (prevVal != null && node.val >= prevVal) return false;
-                }
-                prevVal = node.val;
-                if (node.left != null) q.add(node.left);
-                if (node.right != null) q.add(node.right);
+
+            int prev;
+
+            if (level % 2 == 0) {
+                prev = Integer.MIN_VALUE;
+            } else {
+                prev = Integer.MAX_VALUE;
             }
-            
-            level++; 
+
+            for (int i = 0; i < size; i++) {
+
+                TreeNode curr = q.poll();
+
+                if (level % 2 == 0) {
+
+                    if (curr.val % 2 == 0 || curr.val <= prev) {
+                        return false;
+                    }
+
+                } else {
+
+                    if (curr.val % 2 != 0 || curr.val >= prev) {
+                        return false;
+                    }
+                }
+
+                prev = curr.val;
+
+                if (curr.left != null) {
+                    q.offer(curr.left);
+                }
+
+                if (curr.right != null) {
+                    q.offer(curr.right);
+                }
+            }
+
+            level++;
         }
-        
+
         return true;
     }
 }
